@@ -20,9 +20,6 @@ class EducationEntity implements Serializable {
 	@Column(name = "coursename", length = 50)
 	private String courseName;
 
-	@Column(name = "passingyear")
-	private int passingYear;
-
 	public int getCourseId() {
 		return courseId;
 	}
@@ -37,14 +34,6 @@ class EducationEntity implements Serializable {
 
 	public void setCourseName(String courseName) {
 		this.courseName = courseName;
-	}
-
-	public int getPassingYear() {
-		return passingYear;
-	}
-
-	public void setPassingYear(int passingYear) {
-		this.passingYear = passingYear;
 	}
 
 }

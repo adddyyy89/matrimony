@@ -1,6 +1,11 @@
 package com.matrimony.model;
 
+import java.util.List;
+
+import org.hibernate.Session;
+
 import com.matrimony.dto.UserCredentialsDTO;
+import com.matrimony.exceptions.ResultNotFoundException;
 
 public class UserCredentialsModel extends BaseModel<UserCredentialsEntity, UserCredentialsDTO	>{
 
@@ -24,6 +29,17 @@ public class UserCredentialsModel extends BaseModel<UserCredentialsEntity, UserC
 		entity.setRegistedOn(dto.registedOn);
 		entity.setUserId(dto.userId);
 		return entity;
+	}
+
+	public String getPasswordUsingEmailId(Session session, String emailId) throws ResultNotFoundException {
+		String query = "SELECT password FROM usercredentials WHERE emailid = :emailId; ";
+		
+		@SuppressWarnings("unchecked")
+		List<String> passwordList = session.createSQLQuery(query).setParameter("emailId", emailId).list(); 
+		if(passwordList == null || passwordList.isEmpty()){
+			throw new ResultNotFoundException("password not found for email = " + emailId);
+		}
+		return passwordList.get(0);
 	}
 
 }

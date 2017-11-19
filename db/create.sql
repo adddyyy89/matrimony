@@ -98,13 +98,29 @@ CREATE TABLE education
 (
   courseid integer NOT NULL,
   coursename character varying(50) NOT NULL,
-  passingyear integer NOT NULL,
   CONSTRAINT pk_education PRIMARY KEY (courseid)
 )
 WITH (
   OIDS=FALSE
 );
 ALTER TABLE education
+  OWNER TO postgres;
+
+  -- Table: degree
+CREATE TABLE degree
+(
+  degreeid integer NOT NULL,
+  degreeshort character varying(50) NOT NULL,
+  degreename character varying(50) NOT NULL,
+  CONSTRAINT pk_degree PRIMARY KEY (degreeid),
+  CONSTRAINT fk_education FOREIGN KEY (courseid)
+      REFERENCES education (courseid) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE degree
   OWNER TO postgres;
 
 -- Table: employment
@@ -168,6 +184,7 @@ CREATE TABLE userdetails
   physicaldisability boolean NOT NULL,
   educationid integer NOT NULL,
   employmentid smallint NOT NULL,
+  degreeid smallint NOT NULL,
   occupationid integer NOT NULL,
   income bigint NOT NULL,
   incomecurrencyid integer NOT NULL,
@@ -192,6 +209,9 @@ CREATE TABLE userdetails
       ON UPDATE NO ACTION ON DELETE NO ACTION,
   CONSTRAINT fk_employment FOREIGN KEY (employmentid)
       REFERENCES employment (employmentid) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT fk_degree FOREIGN KEY (degreeid)
+      REFERENCES degree (degreeid) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION,
   CONSTRAINT fk_occupation FOREIGN KEY (occupationid)
       REFERENCES occupation (occupationid) MATCH SIMPLE

@@ -804,13 +804,55 @@ INSERT INTO gender (genderid, gendername) VALUES (3, 'Transgender');
 
 INSERT INTO employment(employmentid, employmenttext) VALUES (?, ?);
 
-INSERT INTO familytype(familytypeid, familytypetext) VALUES (?, ?);
+INSERT INTO familytype(familytypeid, familytypetext) VALUES (0, 'undefined');
+INSERT INTO familytype(familytypeid, familytypetext) VALUES (1, 'Joint Family');
+INSERT INTO familytype(familytypeid, familytypetext) VALUES (2, 'Nuclear Family');
+INSERT INTO familytype(familytypeid, familytypetext) VALUES (3, 'Others');
 
-INSERT INTO currency(currencyid, currencyname) VALUES (?, ?);
+INSERT INTO currency(currencyid, currencyname) VALUES (0, 'undefined');
+INSERT INTO currency(currencyid, currencyname) VALUES (1, 'INR');
+INSERT INTO currency(currencyid, currencyname) VALUES (2, 'USD');
+INSERT INTO currency(currencyid, currencyname) VALUES (3, 'EUR');
+INSERT INTO currency(currencyid, currencyname) VALUES (4, 'JPY');
+INSERT INTO currency(currencyid, currencyname) VALUES (5, 'GBP');
+INSERT INTO currency(currencyid, currencyname) VALUES (6, 'AUD');
+INSERT INTO currency(currencyid, currencyname) VALUES (7, 'CAD');
+INSERT INTO currency(currencyid, currencyname) VALUES (8, 'CHF');
+INSERT INTO currency(currencyid, currencyname) VALUES (9, 'CNY');
+INSERT INTO currency(currencyid, currencyname) VALUES (10, 'SEK');
+INSERT INTO currency(currencyid, currencyname) VALUES (11, 'NZD');
+INSERT INTO currency(currencyid, currencyname) VALUES (12, 'MXN');
+INSERT INTO currency(currencyid, currencyname) VALUES (13, 'HKD');
+INSERT INTO currency(currencyid, currencyname) VALUES (14, 'NOK');
+INSERT INTO currency(currencyid, currencyname) VALUES (15, 'KRW');
+INSERT INTO currency(currencyid, currencyname) VALUES (16, 'TRY');
+INSERT INTO currency(currencyid, currencyname) VALUES (17, 'RUB');
+INSERT INTO currency(currencyid, currencyname) VALUES (18, 'BRL');
+INSERT INTO currency(currencyid, currencyname) VALUES (19, 'Others');
 
-INSERT INTO education(courseid, coursename, passingyear) VALUES (?, ?, ?);
+INSERT INTO education(courseid, coursename) VALUES (0, 'undefined');
+INSERT INTO education(courseid, coursename) VALUES (1, 'Bachelor');
+INSERT INTO education(courseid, coursename) VALUES (2, 'Master');
+INSERT INTO education(courseid, coursename) VALUES (3, 'Doctorate');
 
-INSERT INTO maritalstatus(maritalstatusid, maritalstatustext) VALUES (?, ?);
+INSERT INTO degree(degreeid, degreeshort, degreename, courseid) VALUES (0, 'undefined', '', 1);
+INSERT INTO degree(degreeid, degreeshort, degreename, courseid) VALUES (1, 'B.Sc (Agriculture)', 'Bachelor of Agriculture', 1);
+INSERT INTO degree(degreeid, degreeshort, degreename, courseid) VALUES (2, 'B.Arch', 'Bachelor of Architecture', 1);
+INSERT INTO degree(degreeid, degreeshort, degreename, courseid) VALUES (3, 'B.A', 'Bachelor of Arts', 1);
+INSERT INTO degree(degreeid, degreeshort, degreename, courseid) VALUES (4, 'B.A.M.S', 'Bachelor of Ayurvedic Medicine & Surgery', 1);
+INSERT INTO degree(degreeid, degreeshort, degreename, courseid) VALUES (5, 'B.B.A', 'Bachelor of Business Administration', 1);
+INSERT INTO degree(degreeid, degreeshort, degreename, courseid) VALUES (6, 'B.Com', 'Bachelor of Commerce', 1);
+INSERT INTO degree(degreeid, degreeshort, degreename, courseid) VALUES (7, 'B.C.A', 'Bachelor of Computer Applications', 1);
 
-INSERT INTO occupation(occupationid, occupationname) VALUES (?, ?);
+
+
+INSERT INTO maritalstatus(maritalstatusid, maritalstatustext) VALUES (0, 'undefined');
+INSERT INTO maritalstatus(maritalstatusid, maritalstatustext) VALUES (1, 'Single');
+INSERT INTO maritalstatus(maritalstatusid, maritalstatustext) VALUES (2, 'Married');
+INSERT INTO maritalstatus(maritalstatusid, maritalstatustext) VALUES (3, 'Divorced');
+
+
+INSERT INTO occupation(occupationid, occupationname) VALUES (0, 'undefined');
+INSERT INTO occupation(occupationid, occupationname) VALUES (1, 'Service');
+INSERT INTO occupation(occupationid, occupationname) VALUES (2, 'Own Business');
 

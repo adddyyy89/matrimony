@@ -9,7 +9,6 @@ public class EducationModel extends BaseModel<EducationEntity, EducationDTO> {
 		EducationDTO dto = new EducationDTO();
 		dto.courseId = entity.getCourseId();
 		dto.courseName = entity.getCourseName();
-		dto.passingYear = entity.getPassingYear();
 		return dto;
 	}
 
@@ -18,7 +17,6 @@ public class EducationModel extends BaseModel<EducationEntity, EducationDTO> {
 		EducationEntity entity = new EducationEntity();
 		entity.setCourseId(dto.courseId);
 		entity.setCourseName(dto.courseName);
-		entity.setPassingYear(dto.passingYear);
 		return entity;
 	}
 
