@@ -1,0 +1,33 @@
+.navbar-fixed-top {
+    border: 0;
+}
+
+.navbar-inverse {
+    background-color: #222;
+}
+
+.navbar-fixed-top {
+    top: 0;
+}
+
+.navbar-header {
+    float: left;
+}
+
+.nav-sidebar {
+    display: block;
+}
+
+.sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+}
+
+.placeholders {
+    margin-left: 200px;
+}
