@@ -1,0 +1,10 @@
+.register_div {
+    margin: 0 auto;
+    text-align: left;
+    width: 900px;
+}
+
+.register_error {
+    color: red;
+    font-weight: bold;
+}

@@ -1,3 +1,67 @@
-<p>
-  register works!
-</p>
+<div class="row register_div">
+  
+  <div class="col-md-6 col-sm-12">
+      <h3>{{title}}</h3>
+    <form (ngSubmit)="register()">
+      <p class="register_error">{{error}}</p>
+      <div class="form-group">
+        First Name: <input type="text" class="form-control" placeholder="Anand" [(ngModel)]="firstname" name="firstname" required>
+      </div>
+      <div class="form-group">
+        Last Name:
+        <input type="text" class="form-control" placeholder="Gautam" [(ngModel)]="lastname" name="lastname" required>
+      </div>
+      <div class="form-group">
+        Mobile No: 
+        <input type="text" class="form-control" placeholder="9674350488" [(ngModel)]="mobileno" name="mobileno" required>
+      </div>
+      <div class="form-group">
+          Email Id:
+          <input type="email" class="form-control" placeholder="test@gmail.com" [(ngModel)]="email" name="mobilemaileno" required>
+        </div>
+      <div class="form-group">
+        Gender:
+        <select #selectElem (change)="updateGenderId(selectElem.value)">
+            <option *ngFor="let gender of genders" [value]="gender.value">
+                {{gender.name}}
+            </option>
+        </select>
+        <!--<select name="gender" id="gender" [(ngModel)]="genderid">
+          <option value="0" selected="true">-select-</option>
+          <option value="1">Male</option>
+          <option value="2">Female</option>
+        </select>-->
+      </div>
+      <div class="form-group">
+          Date of Birth:
+          <input type="text" class="form-control" placeholder="15/05/1989" [(ngModel)]="dob" name="dob">
+      </div>
+      <div class="form-group">
+        Primary Address Line:
+          <input type="text" class="form-control" placeholder="1030 Delta Street, Mainland" [(ngModel)]="addressline1" name="addressline1">
+      </div>
+      <div class="form-group">
+        Secondary Address Line:
+          <input type="text" class="form-control" placeholder="Kolkata" [(ngModel)]="place" name="place">
+      </div>
+      <div class="form-group">
+        Pincode: 
+          <input type="text" class="form-control" placeholder="390009" [(ngModel)]="pincode" name="pincode">
+      </div>
+      <div class="form-group">
+        Marital Status:
+        <select #selectElem (change)="updateMaritalStatusId(selectElem.value)">
+            <option *ngFor="let status of maritalStatus" [value]="status.value">
+                {{status.name}}
+            </option>
+        </select>
+      </div>
+      <div class="form-group">
+        Physical Disability: 
+         <input type="radio" id="disability" name="disability" value="yes" [(ngModel)]="physicaldisability">      
+      </div>
+      
+      <button type="submit" class="btn btn-block">Register</button>
+    </form>
+  </div>
+</div>

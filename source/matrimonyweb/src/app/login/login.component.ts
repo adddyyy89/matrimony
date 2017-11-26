@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   public username: string;
   public password: string;
 
-  constructor(private router : Router) {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
@@ -22,10 +22,14 @@ export class LoginComponent implements OnInit {
   }
 
   public loginSubmit() {
-    if(this.username == 'admin' && this.password == 'admin'){
+    if ( this.username === 'admin' && this.password === 'admin' ) {
       this.router.navigate(['dashboard']);
     } else {
       this.error = 'invalid credentials';
     }
+  }
+
+  public register() {
+    this.router.navigate(['register']);
   }
 }
