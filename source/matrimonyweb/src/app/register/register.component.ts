@@ -23,6 +23,7 @@ export class RegisterComponent extends RegisterDataComponent implements OnInit {
   private dob: string;
   private email: string;
   private pincode: string;
+  private physicaldisability: string;
 
   private isvalid: boolean;
 
@@ -77,6 +78,19 @@ export class RegisterComponent extends RegisterDataComponent implements OnInit {
       this.isvalid = false;
     }
     if (this.isvalid) {
+
+      console.log('First Name: ' + this.firstname);
+      console.log('Last Name: ' + this.lastname);
+      console.log('Mobile No: ' + this.mobileno);
+      console.log('Email Id: ' + this.email);
+      console.log('Gender: ' + this.genderId);
+      console.log('Date of Birth: ' + this.dob);
+      console.log('Primary Address Line: ' + this.addressLine1);
+      console.log('Place: ' + this.place);
+      console.log('Pincode: ' + this.pincode);
+      console.log('Marital Status: ' + this.maritalStatusId);
+      console.log('Physical Disability: ' + this.physicaldisability);
+
       this.router.navigate(['dashboard']);
     }
   }

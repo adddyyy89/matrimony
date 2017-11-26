@@ -26,11 +26,6 @@
                 {{gender.name}}
             </option>
         </select>
-        <!--<select name="gender" id="gender" [(ngModel)]="genderid">
-          <option value="0" selected="true">-select-</option>
-          <option value="1">Male</option>
-          <option value="2">Female</option>
-        </select>-->
       </div>
       <div class="form-group">
           Date of Birth:
@@ -38,10 +33,10 @@
       </div>
       <div class="form-group">
         Primary Address Line:
-          <input type="text" class="form-control" placeholder="1030 Delta Street, Mainland" [(ngModel)]="addressline1" name="addressline1">
+          <input type="text" class="form-control" placeholder="1030 Delta Street, Mainland" [(ngModel)]="addressLine1" name="addressline1">
       </div>
       <div class="form-group">
-        Secondary Address Line:
+        Place:
           <input type="text" class="form-control" placeholder="Kolkata" [(ngModel)]="place" name="place">
       </div>
       <div class="form-group">
@@ -58,7 +53,9 @@
       </div>
       <div class="form-group">
         Physical Disability: 
-         <input type="radio" id="disability" name="disability" value="yes" [(ngModel)]="physicaldisability">      
+        <input type="radio" [(ngModel)]="physicaldisability"  name="sex" value="male" class="margin-left-10">Male
+        <input type="radio" [(ngModel)]="physicaldisability"  name="sex" value="female" class="margin-left-10">Female
+        <!--<input type="radio" id="disability" name="disability" value="yes" [(ngModel)]="physicaldisability"> -->     
       </div>
       
       <button type="submit" class="btn btn-block">Register</button>
